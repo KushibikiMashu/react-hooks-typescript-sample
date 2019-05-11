@@ -5,9 +5,9 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 // import Counter from "./hooks/Counter";
-import Article from "./hooks/Todo";
+import TodoA from "./hooks/TodoA";
 
-ReactDOM.render(<Article />, document.getElementById("root"));
+ReactDOM.render(<TodoA />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
