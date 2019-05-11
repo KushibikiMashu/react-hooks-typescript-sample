@@ -4,10 +4,9 @@ import "./index.css";
 // import App from './App';
 import * as serviceWorker from "./serviceWorker";
 
-// import Counter from "./hooks/Counter";
-import TodoA from "./hooks/TodoA";
+import TextInput from "./hooks/TextInput";
 
-ReactDOM.render(<TodoA />, document.getElementById("root"));
+ReactDOM.render(<TextInput />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
