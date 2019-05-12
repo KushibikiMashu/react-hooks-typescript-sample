@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 
 // useRef
 
@@ -6,6 +6,7 @@ const TextInput: React.FC = () => {
   const inputEl = useRef({} as any);
   const textareaEl = useRef({} as any);
   const [text, setText] = useState("this will be changed");
+  const [height, setHeight] = useState(0);
 
   const handleClickToFocus = () => {
     // `current` points to the mounted text input element
@@ -20,6 +21,13 @@ const TextInput: React.FC = () => {
     textareaEl.current.value = "hello!";
   };
 
+  // You can get height of h1 when the node is mounted
+  const measuredRef = useCallback(node => {
+    if (node !== null) {
+      setHeight(node.getBoundingClientRect().height);
+    }
+  }, []);
+
   return (
     <>
       <input ref={inputEl} type="text" />
@@ -30,6 +38,8 @@ const TextInput: React.FC = () => {
         onChange={e => setText(e.target.value)}
       />
       <button onClick={toggleText}>toggle</button>
+      <h1 ref={measuredRef}>Hello, world</h1>
+      <h2>The above header is {Math.round(height)}px tall</h2>
     </>
   );
 };
