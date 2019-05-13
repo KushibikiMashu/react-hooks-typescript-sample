@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import FibonacciCounter from "./hooks/FibonacciCounter";
 
-ReactDOM.render(<FibonacciCounter />, document.getElementById("root"));
+ReactDOM.render(<FibonacciCounter n={40} />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
