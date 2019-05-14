@@ -2,39 +2,49 @@ import React, { useReducer } from "react";
 
 // useReducer
 
-type State = {
+interface State {
   count: number;
-};
+}
 
-enum Action {
+interface Action {
+  type: ActionType;
+}
+
+enum ActionType {
   Increment = "Increment",
   Decrement = "Decrement",
   Reset = "Reset"
 }
 
 const reducer = (state: State, action: Action): State => {
-  switch (action) {
-    case Action.Increment:
+  switch (action.type) {
+    case ActionType.Increment:
       return { count: state.count + 1 };
-    case Action.Decrement:
+    case ActionType.Decrement:
       return { count: state.count - 1 };
-    case Action.Reset:
+    case ActionType.Reset:
       return { count: 0 };
     default:
       throw new Error();
   }
 };
 
-const initialState = { count: 0 };
+const initialState: State = { count: 0 };
 
 const CounterWithReducer: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
-      <button onClick={() => dispatch(Action.Increment)}>+</button>
+      <button onClick={() => dispatch({ type: ActionType.Increment })}>
+        +
+      </button>
+      <button onClick={() => dispatch({ type: ActionType.Decrement })}>
+        -
+      </button>
       {state.count}
-      <button onClick={() => dispatch(Action.Decrement)}>-</button>
-      <button onClick={() => dispatch(Action.Reset)}>reset</button>
+      <button onClick={() => dispatch({ type: ActionType.Reset })}>
+        reset
+      </button>
     </>
   );
 };
