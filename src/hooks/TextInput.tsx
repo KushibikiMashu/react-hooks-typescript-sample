@@ -30,16 +30,22 @@ const TextInput: React.FC = () => {
 
   return (
     <>
-      <input ref={inputEl} type="text" />
-      <button onClick={handleClickToFocus}>Focus the input</button>
-      <textarea
-        ref={textareaEl}
-        value={text}
-        onChange={e => setText(e.target.value)}
-      />
-      <button onClick={toggleText}>toggle</button>
-      <h1 ref={measuredRef}>Hello, world</h1>
-      <h2>The above header is {Math.round(height)}px tall</h2>
+      <div>
+        <input ref={inputEl} type="text" />
+        <button onClick={handleClickToFocus}>Focus the input</button>
+      </div>
+      <div>
+        <textarea
+          ref={textareaEl}
+          value={text}
+          onChange={e => setText(e.target.value)}
+        />
+        <button onClick={toggleText}>toggle</button>
+      </div>
+      <div>
+        <h1 ref={measuredRef}>Hello, world</h1>
+        <h2>The above header is {Math.round(height)}px tall</h2>
+      </div>
     </>
   );
 };
