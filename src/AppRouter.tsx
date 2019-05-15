@@ -28,7 +28,7 @@ const AppRouter: React.FC = () => {
           useMemo: <Link to="/usememo">Fibonacci Counter</Link>
         </li>
         <li>
-          useRef: <Link to="/useref">text input</Link>
+          useRef, useCallback: <Link to="/useref">text input</Link>
         </li>
         <li>
           Custom Hook: <Link to="/customhook">data fetch</Link>
