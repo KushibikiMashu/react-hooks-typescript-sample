@@ -6,7 +6,7 @@ const MultiplyCounter: React.FC = () => {
   const count = useContext(CounterContext);
   return (
     <>
-      {count * 2}
+      <p>multiply: {count * 2}</p>
       <SquareCounter />
     </>
   );
@@ -14,7 +14,7 @@ const MultiplyCounter: React.FC = () => {
 
 const SquareCounter: React.FC = () => {
   const count = useContext(CounterContext);
-  return <>{count * count}</>;
+  return <p>square: {count * count}</p>;
 };
 
 const CounterContext = createContext({} as any);
@@ -23,6 +23,7 @@ const CounterWithContext: React.FC = () => {
   const [count, setCount] = useState<number>(0);
   return (
     <CounterContext.Provider value={count}>
+      {count}
       <button onClick={() => setCount(count + 1)}>+</button>
       <MultiplyCounter />
     </CounterContext.Provider>
