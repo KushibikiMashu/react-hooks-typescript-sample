@@ -13,10 +13,7 @@ const AppRouter: React.FC = () => {
     <Router>
       <ul>
         <li>
-          <Link to="/">home</Link>
-        </li>
-        <li>
-          useState: <Link to="/usestate">counter</Link>
+          useState: <Link to="/">counter</Link>
         </li>
         <li>
           useEffect: <Link to="/useeffect">data fetch</Link>
@@ -41,8 +38,7 @@ const AppRouter: React.FC = () => {
       <hr />
 
       <div>
-        <Route exact path="/" component={() => <></>} />
-        <Route path="/usestate" component={Counter} />
+        <Route exact path="/" component={Counter} />
         <Route path="/useeffect" component={Todo} />
         <Route path="/usecontext" component={CounterWithContext} />
         <Route path="/usereducer" component={CounterWithReducer} />
