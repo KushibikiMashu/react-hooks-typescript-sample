@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 // useContext
 
 const MultiplyCounter: React.FC = () => {
-  const count = useContext(CounterContext);
+  const count = useContext<number>(CounterContext);
   return (
     <>
       <p>multiply: {count * 2}</p>
@@ -13,11 +13,11 @@ const MultiplyCounter: React.FC = () => {
 };
 
 const SquareCounter: React.FC = () => {
-  const count = useContext(CounterContext);
+  const count = useContext<number>(CounterContext);
   return <p>square: {count * count}</p>;
 };
 
-const CounterContext = createContext({} as any);
+const CounterContext = createContext<number>(0);
 
 const CounterWithContext: React.FC = () => {
   const [count, setCount] = useState<number>(0);
