@@ -28,21 +28,23 @@ const FibonacciCounter: React.FC<Target> = props => {
   times.current.push(end - start);
 
   return (
-    <div onClick={rerender}>
-      <p>number: {props.n}</p>
+    <div>
+      <p>target: {props.n}</p>
+      <p>fibonacci: {memoResult}</p>
+      <button onClick={rerender}>rerender</button>
       <div style={{ display: "flex" }}>
         <div>
-          <p>fibonacci: {memoResult}</p>
+          <p>No Memomized</p>
           <ol>
-            {memoTimes.current.map((time, i) => (
+            {times.current.map((time, i) => (
               <li key={i}>{time}</li>
             ))}
           </ol>
         </div>
         <div>
-          <p>fibonacci: {result}</p>
+          <p>Memoized</p>
           <ol>
-            {times.current.map((time, i) => (
+            {memoTimes.current.map((time, i) => (
               <li key={i}>{time}</li>
             ))}
           </ol>
