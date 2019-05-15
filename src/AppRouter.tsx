@@ -34,6 +34,12 @@ const AppRouter: React.FC = () => {
           Custom Hook: <Link to="/customhook">data fetch</Link>
         </li>
       </ul>
+      <p>
+        Code is{" "}
+        <a href="https://github.com/KushibikiMashu/react-hooks-typescript-sample">
+          HERE
+        </a>
+      </p>
 
       <hr />
 
