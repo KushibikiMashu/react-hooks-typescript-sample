@@ -10,7 +10,7 @@ import TodoA from "./hooks/TodoA";
 
 const AppRouter: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/react-hooks-typescript-sample">
       <ul>
         <li>
           useState: <Link to="/">counter</Link>
@@ -38,13 +38,17 @@ const AppRouter: React.FC = () => {
       <hr />
 
       <div>
-        <Route exact path="/" component={Counter} />
-        <Route path="/useeffect" component={Todo} />
-        <Route path="/usecontext" component={CounterWithContext} />
-        <Route path="/usereducer" component={CounterWithReducer} />
-        <Route path="/usememo" component={() => <FibonacciCounter n={36} />} />
-        <Route path="/useref" component={TextInput} />
-        <Route path="/customhook" component={TodoA} />
+        <Route exact path="/" component={Counter}>
+          <Route path="/useeffect" component={Todo} />
+          <Route path="/usecontext" component={CounterWithContext} />
+          <Route path="/usereducer" component={CounterWithReducer} />
+          <Route
+            path="/usememo"
+            component={() => <FibonacciCounter n={36} />}
+          />
+          <Route path="/useref" component={TextInput} />
+          <Route path="/customhook" component={TodoA} />
+        </Route>
       </div>
     </Router>
   );
