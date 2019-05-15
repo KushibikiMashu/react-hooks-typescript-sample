@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/react-hooks-typescript-sample/static/js/main.fef9686d.chunk.js",
-    "main.js.map": "/react-hooks-typescript-sample/static/js/main.fef9686d.chunk.js.map",
+    "main.js": "/react-hooks-typescript-sample/static/js/main.070f8e59.chunk.js",
+    "main.js.map": "/react-hooks-typescript-sample/static/js/main.070f8e59.chunk.js.map",
     "runtime~main.js": "/react-hooks-typescript-sample/static/js/runtime~main.cddf1db3.js",
     "runtime~main.js.map": "/react-hooks-typescript-sample/static/js/runtime~main.cddf1db3.js.map",
     "static/js/2.dbedbfab.chunk.js": "/react-hooks-typescript-sample/static/js/2.dbedbfab.chunk.js",
     "static/js/2.dbedbfab.chunk.js.map": "/react-hooks-typescript-sample/static/js/2.dbedbfab.chunk.js.map",
     "index.html": "/react-hooks-typescript-sample/index.html",
-    "precache-manifest.1e697076f42f25fa6fc5e8fa84740fa8.js": "/react-hooks-typescript-sample/precache-manifest.1e697076f42f25fa6fc5e8fa84740fa8.js",
+    "precache-manifest.1996097bb246bf82d93627efff4afb29.js": "/react-hooks-typescript-sample/precache-manifest.1996097bb246bf82d93627efff4afb29.js",
     "service-worker.js": "/react-hooks-typescript-sample/service-worker.js"
   }
 }

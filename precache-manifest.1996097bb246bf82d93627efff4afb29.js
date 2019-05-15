@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7bb2c4f4e641a8d5c0b3d5fcd97bc20d",
+    "revision": "022e3e998854f03bc26b2d5380553d14",
     "url": "/react-hooks-typescript-sample/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-hooks-typescript-sample/static/js/2.dbedbfab.chunk.js"
   },
   {
-    "revision": "adfd6866fa4ebd97ceb0",
-    "url": "/react-hooks-typescript-sample/static/js/main.fef9686d.chunk.js"
+    "revision": "7a7373242536fbeba6ae",
+    "url": "/react-hooks-typescript-sample/static/js/main.070f8e59.chunk.js"
   },
   {
     "revision": "35b29414cc29133b4099",
