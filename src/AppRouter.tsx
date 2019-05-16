@@ -8,9 +8,9 @@ import useRefSample from "./hooks/SampleOfUseRef";
 import SampleOfUseEffect from "./hooks/SampleOfUseEffect";
 import SampleOfCustomHooks from "./hooks/SampleOfCustomHooks";
 
-const AppRouter: React.FC = () => {
+const Header: React.FC = () => {
   return (
-    <Router basename="/react-hooks-typescript-sample/">
+    <nav>
       <ul>
         <li>
           useState: <Link to="/">counter</Link>
@@ -40,9 +40,15 @@ const AppRouter: React.FC = () => {
           my GitHub repo
         </a>
       </p>
+    </nav>
+  );
+};
 
+const AppRouter: React.FC = () => {
+  return (
+    <Router basename="/react-hooks-typescript-sample/">
+      <Header />
       <hr />
-
       <div>
         <Route exact path="/" component={CounterWithUseState} />
         <Route path="/useeffect" component={SampleOfUseEffect} />
