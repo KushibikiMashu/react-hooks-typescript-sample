@@ -69,7 +69,7 @@ const TodoItem: React.FC<Todo> = ({ userId, title, completed }) => {
 //   }
 // };
 
-const SampleOfCustomEffect: React.FC = () => {
+const SampleOfCustomHooks: React.FC = () => {
   const [todoId, setTodoId] = useState<number>(1);
   const [status, setStatus] = useState<Status>(Status.Loading);
   const todo = useFetchTodo(todoId, setStatus);
@@ -102,4 +102,4 @@ const SampleOfCustomEffect: React.FC = () => {
   );
 };
 
-export default SampleOfCustomEffect;
+export default SampleOfCustomHooks;

@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CounterWithUseState from "./hooks/CounterWithUseState";
-import Todo from "./hooks/SampleOfCustomEffect";
 import CounterWithUseContext from "./hooks/CounterWithUseContext";
 import CounterWithUseReducer from "./hooks/CounterWithUseReducer";
 import FibonacciCounterWithUseMemo from "./hooks/FibonacciCounterWithUseMemo";
 import useRefSample from "./hooks/SampleOfUseRef";
 import SampleOfUseEffect from "./hooks/SampleOfUseEffect";
+import SampleOfCustomHooks from "./hooks/SampleOfCustomHooks";
 
 const AppRouter: React.FC = () => {
   return (
@@ -45,7 +45,7 @@ const AppRouter: React.FC = () => {
 
       <div>
         <Route exact path="/" component={CounterWithUseState} />
-        <Route path="/useeffect" component={Todo} />
+        <Route path="/useeffect" component={SampleOfCustomHooks} />
         <Route path="/usecontext" component={CounterWithUseContext} />
         <Route path="/usereducer" component={CounterWithUseReducer} />
         <Route
