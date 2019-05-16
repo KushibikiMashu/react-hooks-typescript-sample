@@ -9,13 +9,15 @@ interface Todo {
   completed: boolean;
 }
 
-enum Status {
-  Loading = "loading",
-  Success = "success",
-  Error = "error"
+enum ActionType {
+  Loading = "Loading",
+  Success = "Success",
+  Error = "Error"
 }
 
 const Loading: React.FC = () => <>Loading</>;
+
+const Error: React.FC = () => <>Error</>;
 
 const TodoItem: React.FC<Todo> = ({ userId, title, completed }) => {
   return (
@@ -27,25 +29,9 @@ const TodoItem: React.FC<Todo> = ({ userId, title, completed }) => {
   );
 };
 
-/**
- * Todo
- */
-// const todoItem = (status: Status, todo: Todo) => {
-//   switch (status) {
-//     case Status.Loading:
-//       return <Loading/>;
-//     case Status.Success:
-//       return <TodoItem {...todo}/>;
-//     case Status.Error:
-//       return <>error</>;
-//     default:
-//       break;
-//   }
-// };
-
 const SampleOfUseEffect: React.FC = () => {
   const [todoId, setTodoId] = useState(1);
-  const [status, setStatus] = useState(Status.Loading);
+  const [status, setStatus] = useState(ActionType.Loading);
   const [todo, setTodo] = useState(null);
 
   useEffect((): void => {
@@ -55,10 +41,10 @@ const SampleOfUseEffect: React.FC = () => {
           `https://jsonplaceholder.typicode.com/todos/${todoId}`
         );
         setTodo(res.data);
-        setStatus(Status.Success);
+        setStatus(ActionType.Success);
       } catch (e) {
-        console.error(e.messages);
-        setStatus(Status.Error);
+        setStatus(ActionType.Error);
+        console.error(e.message);
       }
     }
 
@@ -69,26 +55,27 @@ const SampleOfUseEffect: React.FC = () => {
     return <Loading />;
   }
 
+  const buttons = (
+    <div>
+      <button onClick={() => setTodoId(todoId + 1)}>+</button>
+      <button onClick={() => setTodoId(1)}>reset</button>
+      <p>Todo ID: {todoId}</p>
+    </div>
+  );
+
+  if (status === ActionType.Loading || status === ActionType.Error) {
+    return (
+      <>
+        {buttons}
+        {status === ActionType.Loading ? <Loading /> : <Error />}
+      </>
+    );
+  }
+
   return (
     <>
-      <button
-        onClick={() => {
-          setTodoId(todoId + 1);
-          setStatus(Status.Loading);
-        }}
-      >
-        +
-      </button>
-      <button
-        onClick={() => {
-          setTodoId(1);
-          setStatus(Status.Loading);
-        }}
-      >
-        reset
-      </button>
-      <p>Todo ID: {todoId}</p>
-      {status === Status.Success ? <TodoItem {...todo} /> : Status.Loading}
+      {buttons}
+      <TodoItem {...todo} />
     </>
   );
 };
