@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Counter from "./hooks/Counter";
-import Todo from "./hooks/Todo";
-import CounterWithContext from "./hooks/CounterWithContext";
-import CounterWithReducer from "./hooks/CounterWithReducer";
-import FibonacciCounter from "./hooks/FibonacciCounter";
+import CounterWithUseState from "./hooks/CounterWithUseState";
+import Todo from "./hooks/SampleOfCustomEffect";
+import CounterWithUseContext from "./hooks/CounterWithUseContext";
+import CounterWithUseReducer from "./hooks/CounterWithUseReducer";
+import FibonacciCounterWithUseMemo from "./hooks/FibonacciCounterWithUseMemo";
 import useRefSample from "./hooks/SampleOfUseRef";
-import TodoA from "./hooks/TodoA";
+import SampleOfUseEffect from "./hooks/SampleOfUseEffect";
 
 const AppRouter: React.FC = () => {
   return (
@@ -44,13 +44,16 @@ const AppRouter: React.FC = () => {
       <hr />
 
       <div>
-        <Route exact path="/" component={Counter} />
+        <Route exact path="/" component={CounterWithUseState} />
         <Route path="/useeffect" component={Todo} />
-        <Route path="/usecontext" component={CounterWithContext} />
-        <Route path="/usereducer" component={CounterWithReducer} />
-        <Route path="/usememo" component={() => <FibonacciCounter n={36} />} />
+        <Route path="/usecontext" component={CounterWithUseContext} />
+        <Route path="/usereducer" component={CounterWithUseReducer} />
+        <Route
+          path="/usememo"
+          component={() => <FibonacciCounterWithUseMemo n={36} />}
+        />
         <Route path="/useref" component={useRefSample} />
-        <Route path="/customhook" component={TodoA} />
+        <Route path="/customhook" component={SampleOfUseEffect} />
       </div>
     </Router>
   );

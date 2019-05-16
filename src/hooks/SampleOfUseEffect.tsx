@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// custom hook
+// useEffect
 
 interface Todo {
   userId: number;
@@ -13,32 +13,6 @@ enum Status {
   Loading = "loading",
   Success = "success",
   Error = "error"
-}
-
-function useFetchTodo(
-  todoId: number,
-  setStatus: Dispatch<SetStateAction<Status>>
-): null | Todo {
-  const [todo, setTodo] = useState(null);
-
-  useEffect((): void => {
-    async function fetch(): Promise<any> {
-      try {
-        const res = await axios.get(
-          `https://jsonplaceholder.typicode.com/todos/${todoId}`
-        );
-        setTodo(res.data);
-        setStatus(Status.Success);
-      } catch (e) {
-        console.error(e.messages);
-        setStatus(Status.Error);
-      }
-    }
-
-    fetch();
-  }, [todoId]);
-
-  return todo;
 }
 
 const Loading: React.FC = () => <>'Loading'</>;
@@ -69,10 +43,27 @@ const TodoItem: React.FC<Todo> = ({ userId, title, completed }) => {
 //   }
 // };
 
-const Todo: React.FC = () => {
-  const [todoId, setTodoId] = useState<number>(1);
-  const [status, setStatus] = useState<Status>(Status.Loading);
-  const todo = useFetchTodo(todoId, setStatus);
+const SampleOfUseEffect: React.FC = () => {
+  const [todoId, setTodoId] = useState(1);
+  const [status, setStatus] = useState(Status.Loading);
+  const [todo, setTodo] = useState(null);
+
+  useEffect((): void => {
+    async function fetch(): Promise<any> {
+      try {
+        const res = await axios.get(
+          `https://jsonplaceholder.typicode.com/todos/${todoId}`
+        );
+        setTodo(res.data);
+        setStatus(Status.Success);
+      } catch (e) {
+        console.error(e.messages);
+        setStatus(Status.Error);
+      }
+    }
+
+    fetch();
+  }, [todoId]);
 
   if (todo === null) {
     return <Loading />;
@@ -102,4 +93,4 @@ const Todo: React.FC = () => {
   );
 };
 
-export default Todo;
+export default SampleOfUseEffect;

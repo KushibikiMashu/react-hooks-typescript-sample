@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // useState
 
-const Counter: React.FC = () => {
+const CounterWithUseState: React.FC = () => {
   const [count, setCount] = useState(0);
   return (
     <>
@@ -14,4 +14,4 @@ const Counter: React.FC = () => {
   );
 };
 
-export default Counter;
+export default CounterWithUseState;

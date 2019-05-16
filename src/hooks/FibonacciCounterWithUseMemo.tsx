@@ -9,7 +9,7 @@ interface Target {
 const fibonacci = (n: number): number =>
   n > 2 ? fibonacci(n - 1) + fibonacci(n - 2) : 1;
 
-const FibonacciCounter: React.FC<Target> = props => {
+const FibonacciCounterWithUseMemo: React.FC<Target> = props => {
   const [_, rerender] = useState<any>(null);
   const memoTimes = useRef<number[]>([]);
   const times = useRef<number[]>([]);
@@ -54,4 +54,4 @@ const FibonacciCounter: React.FC<Target> = props => {
   );
 };
 
-export default FibonacciCounter;
+export default FibonacciCounterWithUseMemo;

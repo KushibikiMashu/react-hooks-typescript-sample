@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CounterWithContext from "../hooks/CounterWithContext";
+import CounterWithUseContext from "../hooks/CounterWithUseContext";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<CounterWithContext />, div);
+  ReactDOM.render(<CounterWithUseContext />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

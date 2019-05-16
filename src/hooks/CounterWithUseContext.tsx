@@ -19,7 +19,7 @@ const SquareCounter: React.FC = () => {
 
 const CounterContext = createContext<number>(0);
 
-const CounterWithContext: React.FC = () => {
+const CounterWithUseContext: React.FC = () => {
   const [count, setCount] = useState<number>(0);
   return (
     <CounterContext.Provider value={count}>
@@ -30,4 +30,4 @@ const CounterWithContext: React.FC = () => {
   );
 };
 
-export default CounterWithContext;
+export default CounterWithUseContext;

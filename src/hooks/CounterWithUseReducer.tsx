@@ -31,7 +31,7 @@ const reducer = (state: State, action: Action): State => {
 
 const initialState: State = { count: 0 };
 
-const CounterWithReducer: React.FC = () => {
+const CounterWithUseReducer: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
@@ -49,4 +49,4 @@ const CounterWithReducer: React.FC = () => {
   );
 };
 
-export default CounterWithReducer;
+export default CounterWithUseReducer;
