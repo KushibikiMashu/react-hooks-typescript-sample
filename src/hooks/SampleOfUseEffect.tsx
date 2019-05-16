@@ -15,7 +15,7 @@ enum Status {
   Error = "error"
 }
 
-const Loading: React.FC = () => <>'Loading'</>;
+const Loading: React.FC = () => <>Loading</>;
 
 const TodoItem: React.FC<Todo> = ({ userId, title, completed }) => {
   return (

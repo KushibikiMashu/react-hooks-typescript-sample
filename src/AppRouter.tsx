@@ -45,7 +45,7 @@ const AppRouter: React.FC = () => {
 
       <div>
         <Route exact path="/" component={CounterWithUseState} />
-        <Route path="/useeffect" component={SampleOfCustomHooks} />
+        <Route path="/useeffect" component={SampleOfUseEffect} />
         <Route path="/usecontext" component={CounterWithUseContext} />
         <Route path="/usereducer" component={CounterWithUseReducer} />
         <Route
@@ -53,7 +53,7 @@ const AppRouter: React.FC = () => {
           component={() => <FibonacciCounterWithUseMemo n={36} />}
         />
         <Route path="/useref" component={useRefSample} />
-        <Route path="/customhook" component={SampleOfUseEffect} />
+        <Route path="/customhook" component={SampleOfCustomHooks} />
       </div>
     </Router>
   );
