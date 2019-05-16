@@ -5,7 +5,7 @@ import Todo from "./hooks/Todo";
 import CounterWithContext from "./hooks/CounterWithContext";
 import CounterWithReducer from "./hooks/CounterWithReducer";
 import FibonacciCounter from "./hooks/FibonacciCounter";
-import TextInput from "./hooks/TextInput";
+import useRefSample from "./hooks/SampleOfUseRef";
 import TodoA from "./hooks/TodoA";
 
 const AppRouter: React.FC = () => {
@@ -35,9 +35,9 @@ const AppRouter: React.FC = () => {
         </li>
       </ul>
       <p>
-        Code is{" "}
+        Code is on{" "}
         <a href="https://github.com/KushibikiMashu/react-hooks-typescript-sample">
-          HERE
+          my GitHub repo
         </a>
       </p>
 
@@ -49,7 +49,7 @@ const AppRouter: React.FC = () => {
         <Route path="/usecontext" component={CounterWithContext} />
         <Route path="/usereducer" component={CounterWithReducer} />
         <Route path="/usememo" component={() => <FibonacciCounter n={36} />} />
-        <Route path="/useref" component={TextInput} />
+        <Route path="/useref" component={useRefSample} />
         <Route path="/customhook" component={TodoA} />
       </div>
     </Router>
