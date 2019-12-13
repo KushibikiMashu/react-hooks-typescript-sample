@@ -10,7 +10,7 @@
     "@types/react-router-dom": "^4.3.3",
     "axios": "^0.18.0",
     "i": "^0.3.6",
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "performance-now": "^2.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
